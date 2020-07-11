@@ -1,10 +1,12 @@
-# svelte-local-firebase-emulator-setup
+# svelte-firebase-rxjs-todo-app
 
-This is example code for my blog post - [Smooth local Firebase development setup with Firebase emulator and Snowpack](https://codechips.me/local-development-with-firebase-emulator-and-snowpack/).
+This is example code for my blog post - [How to build a Todo app with RxJS, Svelte and Firebase](https://codechips.me/how-to-build-todo-app-with-svelte-rxjs-firebase/).
+
+![todo app final version](todo-app-firebase-rxjs-svelte.gif)
 
 ## Requirements
 
-A working Java environment. Required by Firebase Emulator
+A working Java environment. Required by Firebase Emulator.
 
 ## How to run
 
