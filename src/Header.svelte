@@ -4,7 +4,7 @@
 
   let action = '';
   // input field element reference
-  let ref = '';
+  let ref = null;
 
   onMount(() => {
     // focus the input field on app load

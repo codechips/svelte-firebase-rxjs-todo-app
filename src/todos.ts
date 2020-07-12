@@ -61,6 +61,7 @@ export const updateTodo = async (id: string, action: string) => {
   if (action.trim()) await todoCollection.doc(id).update({ action });
 };
 
+// filter observable
 const todoFilter = new BehaviorSubject('all');
 
 // Export the Subject's next function as setFilter
@@ -74,7 +75,7 @@ export const filteredTodos = combineLatest(todos, todoFilter).pipe(
 );
 
 export const clearCompleted = async () => {
-  // ret are query reference to all completed todo items
+  // Firestore query reference to all completed todo items
   const completed = await todoCollection.where('completed', '==', true).get();
 
   // loop over it and delete each one
@@ -84,11 +85,11 @@ export const clearCompleted = async () => {
 };
 
 export const checkAll = async (completed: boolean) => {
-  // get reference to all todo items
+  // Firebase query reference to all todo items
   const allTodos = await todoCollection.get();
 
   allTodos.forEach(async doc => {
-    // change the item status if not the same as supplied
+    // change the item status if it's not the same as supplied
     if (doc.data().completed !== completed) {
       await todoCollection.doc(doc.id).update({ completed });
     }
